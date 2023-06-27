@@ -6,10 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
-        int number = 0;
-        int current = 0;
-        int previous = 999;
-        int guesses = 0;
+        int number =0, current = 0, previous = 0, guesses = 0;
         Scanner in = new Scanner(System.in);
         Random random = new Random();
         number = random.nextInt(11);
@@ -21,12 +18,8 @@ public class Main {
                 continue;
             }
             guesses++;
-            if(current < number){
-                System.out.println("Too small");
-            }
-            if(current > number){
-                System.out.println("Too large");
-            }
+            String outcome = (current<number) ? "Too small" : "Too large";
+            System.out.println(outcome);
             previous = current;
         }
         System.out.println("You guessed correctly in " + guesses + " guesses.");
